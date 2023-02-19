@@ -6,7 +6,7 @@ export default function WeatherDashboard() {
   const [weatherData, setWeatherData] = useState<IWeatherData | null>(null);
 
   useEffect(() => {
-    WeatherDataService.getWeatherData()
+    WeatherDataService.getWeatherData(57.7, 11.96)
       .then(response => setWeatherData(response));      
     }, []);    
     
@@ -15,20 +15,25 @@ export default function WeatherDashboard() {
     }
     
   return (
-    <div className='mx-auto mt-20 glass h-fit p-12 border rounded-xl'>
-      <h1 className="text-center text-2xl mb-8">Weather in Göteborg</h1>
+    <div className="
+    flex mx-auto mt-20 glass h-fit p-8 gap-2 border rounded-xl overflow-x-scroll w-full sm:w-3/4"
+    >
+      {/* <h1 className="text-center text-2xl mb-8">Weather in Göteborg</h1> */}
       
-      {weatherData?.list.slice(0, 6).map((weather) => {
-        const time = new Date(weather.dt_txt).getHours().toString().padStart(2, '0').padEnd(5, ':00');
+      {weatherData?.list.map((weather) => {
+        const time = new Date(weather.dt_txt).getHours().toString().padStart(2, '0');
         const tempC = Math.floor(weather.main.temp);
         const weatherIcon = weather.weather[0].icon;    
         const description = weather.weather[0].description;    
         
         return (
-          <div key={weather.dt_txt} className="flex justify-around items-center bg-slate-800 hover:bg-slate-900 mb-2 rounded-lg">
+          <div key={weather.dt_txt} className="
+          flex flex-col justify-around items-center bg-gray-400 p-4 gap-2 rounded-lg
+          ">
             <h2>{time}</h2>
             <p>{tempC}°</p>
-            <img src={`http://openweathermap.org/img/wn/${weatherIcon}.png`} alt={`${description}`} title={`${description}`} />
+            <img src={`http://openweathermap.org/img/wn/${weatherIcon}.png`} 
+              alt={`${description}`} title={`${description}`} />
           </div>
         );
       })

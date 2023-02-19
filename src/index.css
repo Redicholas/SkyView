@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .glass {
-  @apply bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-10 border-slate-800;
+  @apply bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-30 bg-blue-300 border-slate-800;
 }
 
 h1,

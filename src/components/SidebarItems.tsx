@@ -1,4 +1,4 @@
-import { locationData } from "./locationData"
+import { locationData } from "../services/locationData"
 
 export default function SidebarItems() {
     return (
