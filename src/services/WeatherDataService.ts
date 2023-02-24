@@ -11,6 +11,3 @@ export const WeatherDataService = {
     return response.data;
   },
 };
-
-
-// "https://api.openweathermap.org/data/2.5/forecast?lat=57.7072&lon=11.9668&appid=b16d3c460c63b50c63635b2ac02b0f46&units=metric";

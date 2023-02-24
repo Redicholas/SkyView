@@ -6,8 +6,8 @@ export default function WeatherDashboard() {
   const [weatherData, setWeatherData] = useState<IWeatherData | null>(null);
 
   useEffect(() => {
-    WeatherDataService.getWeatherData(57.7, 11.96)
-      .then(response => setWeatherData(response));      
+    WeatherDataService.getWeatherData(57.7, 11.96) // Gothenburg
+      .then(response => setWeatherData(response));
     }, []);    
     
     if (!weatherData) {
@@ -16,10 +16,8 @@ export default function WeatherDashboard() {
     
   return (
     <div className="
-    flex mx-auto mt-20 glass h-fit p-8 gap-2 border rounded-xl overflow-x-scroll w-full sm:w-3/4"
-    >
-      {/* <h1 className="text-center text-2xl mb-8">Weather in Göteborg</h1> */}
-      
+    flex mx-auto mt-20 glass h-fit p-4 gap-2 border rounded-xl overflow-x-scroll w-full sm:w-3/4"
+    >      
       {weatherData?.list.map((weather) => {
         const time = new Date(weather.dt_txt).getHours().toString().padStart(2, '0');
         const tempC = Math.floor(weather.main.temp);
@@ -32,8 +30,9 @@ export default function WeatherDashboard() {
           ">
             <h2>{time}</h2>
             <p>{tempC}°</p>
-            <img src={`http://openweathermap.org/img/wn/${weatherIcon}.png`} 
-              alt={`${description}`} title={`${description}`} />
+            <img src={`http://openweathermap.org/img/wn/${weatherIcon}@2x.png`} 
+              alt={`${description}`} title={`${description}`}
+               />
           </div>
         );
       })

@@ -39,9 +39,9 @@ function App() {
 
   return (
     <div className="App min-h-screen flex flex-col bg-cover bg-center bg-fixed p-4" 
-      style={{ backgroundImage: `url(${backgroundImage})` }}>
+    style={{ backgroundImage: `url(${backgroundImage})` }}>
+      {/* <Sidebar /> */}
       <CurrentWeather />
-      <Sidebar />
       <WeatherDashboard />
     </div>
   )

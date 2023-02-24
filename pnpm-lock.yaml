@@ -5,6 +5,7 @@ specifiers:
   '@types/react-dom': ^18.0.10
   '@typescript-eslint/eslint-plugin': ^5.0.0
   '@vitejs/plugin-react': ^3.1.0
+  aicommits: ^1.1.0
   autoprefixer: ^10.4.13
   axios: ^1.3.3
   eslint: ^8.0.1
@@ -21,6 +22,7 @@ specifiers:
   vite: ^4.1.0
 
 dependencies:
+  aicommits: 1.1.0
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
 
@@ -776,6 +778,11 @@ packages:
     engines: {node: '>=0.4.0'}
     hasBin: true
     dev: true
+
+  /aicommits/1.1.0:
+    resolution: {integrity: sha512-7OUUh0oDPu8ixk1QzjNabep9suMqnRMCw1JQmL66N2Ydy8uRHkVTwb7CFYYaDcdlVm1b3xyJNA3XFsXtYObSjA==}
+    hasBin: true
+    dev: false
 
   /ajv/6.12.6:
     resolution: {integrity: sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g==}

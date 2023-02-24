@@ -3,11 +3,27 @@
 @tailwind utilities;
 
 .glass {
-  @apply bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-30 bg-blue-300 border-slate-800;
+  @apply bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 bg-slate-800 border-slate-800;
 }
 
 h1,
 h2,
 p {
-  @apply text-white drop-shadow-lg shadow-black;
+  @apply text-white drop-shadow-2xl shadow-black;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
 }

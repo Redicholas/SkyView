@@ -1,11 +1,12 @@
-import SidebarItems from './SidebarItems'
+import { useState } from 'react'
 
 export default function Sidebar() {
     return (
-        <nav className="h-screen w-1/3 p-8 hidden 
-        glass border-r">
+        <nav className="w-full p-8 
+        glass">
             <h1 className="my-16 text-center text-2xl">SkyView</h1>
-            <SidebarItems />
+            <input id="searchInput" type="text" placeholder="Search" className="w-full p-2 rounded-lg" />
+            <div id="location-dropdown" className="dropdown-content"></div>
         </nav>
     )
 }
