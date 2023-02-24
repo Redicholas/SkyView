@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
-import { IWeatherData } from '../services/IWeatherData';
+import { IWeatherData } from '../services/models/IWeatherData';
 import { WeatherDataService } from '../services/WeatherDataService';
 
 export default function CurrentWeather() {
     const [weatherData, setWeatherData] = useState<IWeatherData | null>(null);
 
     useEffect(() => {
-        WeatherDataService.getWeatherData(57.7, 11.96)
+        WeatherDataService.getWeatherData(57.7, 11.96) // Gothenburg
         .then(response => setWeatherData(response));      
     }, []);    
   

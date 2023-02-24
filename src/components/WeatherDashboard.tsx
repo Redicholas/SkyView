@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { IWeatherData } from '../services/IWeatherData';
+import { IWeatherData } from '../services/models/IWeatherData';
 import { WeatherDataService } from '../services/WeatherDataService';
 
 export default function WeatherDashboard() {
