@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
-import { IWeatherData } from './services/models/IWeatherData'
-import { WeatherDataService } from './services/WeatherDataService'
+import { IWeatherData } from './models/IWeatherData'
+// import { WeatherDataService } from './services/WeatherDataService'
+import { getWeatherData } from './services/WeatherDataService'
 import CurrentWeather from './components/CurrentWeather'
 import Sidebar from './components/Sidebar'
 import WeatherDashboard from './components/WeatherDashboard'
@@ -12,7 +13,7 @@ function App() {
   const [weatherData, setWeatherData] = useState<IWeatherData | null>(null);
 
   useEffect(() => {
-      WeatherDataService.getWeatherData(57.7, 11.96)
+      getWeatherData("stockholm")
       .then(response => setWeatherData(response));      
   }, []);    
 
@@ -40,7 +41,7 @@ function App() {
   return (
     <div className="App min-h-screen flex flex-col bg-cover bg-center bg-fixed p-4" 
     style={{ backgroundImage: `url(${backgroundImage})` }}>
-      {/* <Sidebar /> */}
+      <Sidebar />
       <CurrentWeather />
       <WeatherDashboard />
     </div>
